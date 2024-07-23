@@ -1,15 +1,15 @@
-import { useAppContext } from "./context/AppContext"
 import Layout from './components/layout/Layout'
 import { Route, Routes } from "react-router-dom"
 import Home from './pages/Home';
 import Products from './pages/Products';
-import Cart from './pages/Cart'
+import Cart from './pages/Cart';
+import data from './data/data';
 
 function App() {
 
-  const {cartItems} = useAppContext();
+  console.log(data)
 
-  console.log(cartItems)
+
   return (
     <>
       <Layout>
