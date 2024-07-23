@@ -3,12 +3,8 @@ import { Route, Routes } from "react-router-dom"
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Cart from './pages/Cart';
-import data from './data/data';
 
 function App() {
-
-  console.log(data)
-
 
   return (
     <>
