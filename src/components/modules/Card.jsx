@@ -1,7 +1,11 @@
 import React from 'react'
 import { Star } from 'lucide-react';
+import { useAppContext } from '../../context/AppContext';
 
 const Card = ({ data }) => {
+
+    const { addToCart } = useAppContext();
+
 
     return (
         <div className='grid grid-cols-12 gap-4'>
@@ -25,7 +29,11 @@ const Card = ({ data }) => {
                             <del className='text-sm text-gray-500'>{item.prevPrice}</del>
                             <span className='text-rose-700 font-bold'>{item.newPrice}</span>
                         </div>
-                        <button className='w-full h-11 bg-rose-600 text-white rounded-lg'>Add To Cart</button>
+                        <button
+                            className='w-full h-11 bg-rose-600 text-white rounded-lg'
+                            onClick={() => addToCart(item)}>
+                            Add To Cart
+                        </button>
                     </div>
                 </div>
             ))}

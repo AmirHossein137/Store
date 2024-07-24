@@ -6,7 +6,7 @@ import { useAppContext } from '../../context/AppContext';
 
 const Header = () => {
 
-    const { search, setSearch } = useAppContext()
+    const { search, setSearch , cartItems } = useAppContext()
 
     return (
         <div className='flex items-center justify-between border-b border-gray-300 py-5 mb-5'>
@@ -26,8 +26,9 @@ const Header = () => {
                 </div>
             </div>
             <div>
-                <Link to={'/cart'}>
+                <Link to={'/cart'} className='relative flex'>
                     <ShoppingCart />
+                    <div className='absolute text-white text-xs -top-2 -right-1 bg-violet-600 w-5 h-5 flex items-center justify-center rounded-full'>{cartItems.length}</div>
                 </Link>
             </div>
         </div>
